@@ -10,7 +10,8 @@ class App extends React.Component {
     
     this.state = {
       monsters: [],
-      searchField: ''
+      searchField: '',
+      title: ''
     };
   }
 
@@ -22,15 +23,17 @@ class App extends React.Component {
 
   handleChange = (e) => {
     this.setState({ searchField: e.target.value });
+    this.setState({ title: e.target.value });
   }
 
   render() {
-    const { monsters, searchField } = this.state;
+    const { monsters, searchField, title } = this.state;
     const filteredMonsters = monsters.filter(monster => monster.name.toLowerCase().includes(searchField.toLowerCase()))
 
     return (
       <div className="App">
-        <h1>Monsters Rollerdex</h1>
+        <h1>Monster Rolodex</h1>
+        <h2>Search Keyword: { title }</h2>
         <SearchBox placeholder="Search Monsters" handleChange={ this.handleChange } />
         <CardList monsters={ filteredMonsters } />
       </div>

@@ -2,8 +2,16 @@
     text-align: center;
 }
 
-h1 {
+h1, h2, h3 {
     font-family: 'Bigelow Rules';
-    font-size: 72px;
     color: #0ccac4;
+}
+
+h1 {
+    font-size: 72px;
+    margin-bottom: 15px;
+}
+
+h2 {
+    font-size: 40px;
 }
